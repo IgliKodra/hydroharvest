@@ -26,7 +26,7 @@ const AccountLayout = () => {
   );
 
   return (
-    <LayoutSafeAreaView onPress={Keyboard.dismiss}>
+    <>
       <AccountLayoutHeader>
         <AccountLayoutHeaderTitle>
           {currentRoute.title}
@@ -38,9 +38,9 @@ const AccountLayout = () => {
         </XStack>
       </AccountLayoutHeader>
       <AccountLayoutContainer>
-        <Slot screenOptions={{ showHeader: false }} />
+        <Slot />
       </AccountLayoutContainer>
-    </LayoutSafeAreaView>
+    </>
   );
 };
 

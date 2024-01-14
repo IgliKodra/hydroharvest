@@ -6,15 +6,15 @@ export const AccountLayoutContainer = styled(SafeAreaView, {
   width: "100%",
   height: "100%",
   flex: 1,
-  paddingLeft: "$3",
-  paddingRight: "$3",
+  paddingLeft: "$6",
+  paddingRight: "$6",
 });
 export const AccountLayoutHeader = styled(YStack, {
   name: "AccountLayoutHeader",
   width: "100%",
   height: "20%",
-  paddingHorizontal: "$4",
-  paddingVertical: "$2",
+  paddingHorizontal: "$6",
+  paddingTop: "$2",
 });
 export const AccountLayoutHeaderTitle = styled(H1, {
   name: "AccountLayoutHeaderTitle",

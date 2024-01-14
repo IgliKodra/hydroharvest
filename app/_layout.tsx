@@ -1,6 +1,6 @@
 // React Peer Dependencies
 import React, { Suspense, useEffect } from "react";
-import { useColorScheme } from "react-native";
+import { useColorScheme, View } from "react-native";
 // Expo Peer Dependencies
 import {
   DarkTheme,
@@ -10,11 +10,12 @@ import {
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 // Tamagui Peer Dependencies
-import { TamaguiProvider, Text, Theme } from "tamagui";
+import { Button, H2, H3, TamaguiProvider, Text, Theme, XStack } from "tamagui";
 import { ToastProvider, ToastViewport } from "@tamagui/toast";
 import tamaguiConfig from "../tamagui.config";
 // Custom Components
 import { Toast, LayoutStack } from "@consts/components";
+import { AlignJustify } from "@tamagui/lucide-icons";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -48,7 +49,27 @@ const Layout = () => {
               <LayoutStack>
                 <Stack
                   screenOptions={{
-                    headerShown: false,
+                    headerShown: true,
+                    headerTitle: () => (
+                      <View
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          width: "100%",
+                          marginLeft: -10,
+                        }}
+                      >
+                        <H3>Home</H3>
+                        <Button
+                          w={"$3"}
+                          h={"$3"}
+                        >
+                          <AlignJustify />
+                        </Button>
+                      </View>
+                    ),
                   }}
                 />
               </LayoutStack>

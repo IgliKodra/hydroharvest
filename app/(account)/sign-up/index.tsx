@@ -115,6 +115,12 @@ const SignUpScreen = () => {
   };
   return (
     <SignUpScreenContent>
+      <Image
+        source={require("../../../assets/images/logo.png")}
+        width={200}
+        height={200}
+        resizeMode={"cover"}
+      />
       <Form onSubmit={handleFormSubmit}>
         <YStack
           width={"100%"}
@@ -135,12 +141,6 @@ const SignUpScreen = () => {
 
             return (
               <Fragment key={name}>
-                <Image
-                  source={require("../../../assets/images/logo.svg")}
-                  width={20}
-                  height={20}
-                  resizeMode={"cover"}
-                />
                 <Label htmlFor={`${name}-field`}>{label}</Label>
                 {
                   {

@@ -6,8 +6,9 @@ import { createAnimations } from "@tamagui/animations-react-native";
 import { createInterFont } from "@tamagui/font-inter";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
+import { animations } from "@tamagui/config";
 
-const animations = createAnimations({
+const addedAnimations = createAnimations({
   bouncy: {
     type: "spring",
     damping: 10,
@@ -70,7 +71,7 @@ const customTokens = createTokens({
 });
 
 const tamaguiConfig = createTamagui({
-  animations,
+  animations: { ...addedAnimations, ...animations },
   defaultTheme: "light",
   shouldAddPrefersColorThemes: false,
   themeClassNameOnRoot: false,

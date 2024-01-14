@@ -10,7 +10,8 @@ import Drawer, {
 // Layout
 import { LayoutStack } from "@components/layout/LayoutStack";
 import { LayoutSafeAreaView } from "@components/layout/LayoutSafeAreaView";
-
+// Home
+import ModuleCard, { ModuleCardProps } from "@components/home/ModuleCard";
 export {
   ImagePicker,
   ImagePickerProps,
@@ -20,4 +21,6 @@ export {
   Drawer,
   DrawerProps,
   DrawerMethods,
+  ModuleCard,
+  ModuleCardProps,
 };
