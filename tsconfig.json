@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@consts/*": ["./constants/*"],
+      "@utils/*": ["./utils/*"]
+    }
+  },
+  "extends": "expo/tsconfig.base",
+  //"include": ["**/*.{ts|tsx}", "app/**/*.{ts|tsx}"],
+  "strict": true
+}

@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "scheme": "tamagui-app",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "backgroundColor": "#ddffe2",
+      "image": "./assets/splash.png",
+      "resizeMode": "contain"
+    },
+    "icon": "./assets/icon.png",
+    "name": "Hydro Harvest",
+    "slug": "HydroHarvest",
+    "android": {
+      "package": "com.anonymous.LookUp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.LookUp"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ]
+    ]
+  }
+}
