@@ -1,5 +1,12 @@
 import { useState } from "react";
-
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart,
+} from "react-native-chart-kit";
 import {
   AnimatePresence,
   H5,
@@ -12,6 +19,10 @@ import {
   StackProps,
 } from "tamagui";
 import { LayoutSafeAreaView } from "@consts/components";
+import { Dimensions } from "react-native";
+import WaterChart from "@components/module/WaterChart";
+import NutritionChart from "@components/module/NutritionChart";
+import EmissionChart from "@components/module/EmissionChart";
 
 export default function TabsAdvancedDemo() {
   const [demoIndex, setDemoIndex] = useState(0);
@@ -38,7 +49,7 @@ const TabsAdvancedBackground = () => {
     prevActiveAt: TabLayout | null;
   }>({
     activeAt: null,
-    currentTab: "tab1",
+    currentTab: "water",
     intentAt: null,
     prevActiveAt: null,
   });
@@ -83,7 +94,7 @@ const TabsAdvancedBackground = () => {
       orientation="horizontal"
       size="$4"
       padding="$2"
-      height={150}
+      height={Dimensions.get("window").height * 0.8}
       flexDirection="column"
       activationMode="manual"
       backgroundColor="$background"
@@ -124,21 +135,21 @@ const TabsAdvancedBackground = () => {
         >
           <Tabs.Tab
             unstyled
-            value="tab1"
+            value="water"
             onInteraction={handleOnInteraction}
           >
             <H6>Water</H6>
           </Tabs.Tab>
           <Tabs.Tab
             unstyled
-            value="tab2"
+            value="nutrition"
             onInteraction={handleOnInteraction}
           >
             <H6>Nutrition</H6>
           </Tabs.Tab>
           <Tabs.Tab
             unstyled
-            value="tab3"
+            value="emissions"
             onInteraction={handleOnInteraction}
           >
             <H6>CO2 Emissions</H6>
@@ -162,16 +173,33 @@ const TabsAdvancedBackground = () => {
             value={currentTab}
             forceMount
             flex={1}
+            display={"flex"}
             justifyContent="center"
+            alignItems="center"
+            bg={"black"}
+            p={"$4"}
+            borderRadius={"$4"}
+            gap={"$4"}
+            mt={"$4"}
           >
-            <H5 textAlign="center">{currentTab}</H5>
+            <H5
+              textTransform={"capitalize"}
+              size={"$6"}
+            >
+              {currentTab}
+            </H5>
+            {TAB_MAP[currentTab]}
           </Tabs.Content>
         </AnimatedYStack>
       </AnimatePresence>
     </Tabs>
   );
 };
-
+const TAB_MAP = {
+  water: <WaterChart />,
+  nutrition: <NutritionChart />,
+  emissions: <EmissionChart />,
+};
 const TabsRovingIndicator = ({
   active,
   ...props
