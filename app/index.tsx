@@ -36,6 +36,22 @@ const Home = () => {
             Try out Sign Up Screen
           </Button>
         </Link>
+        <Link
+          href={"/sign-out"}
+          asChild
+        >
+          <Button
+            textAlign="center"
+            backgroundColor={"$green6"}
+            borderColor={"$green11"}
+            borderWidth={"$1"}
+            pressStyle={{
+              backgroundColor: "$green8",
+            }}
+          >
+            Try out Sign Out Screen
+          </Button>
+        </Link>
         {/*<Button*/}
         {/*  onPress={() => {*/}
         {/*    toast.show("Successfully saved!", {*/}

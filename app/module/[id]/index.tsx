@@ -142,17 +142,24 @@ const TabsAdvancedBackground = () => {
           </Tabs.Tab>
           <Tabs.Tab
             unstyled
-            value="nutrition"
+            value="pH"
             onInteraction={handleOnInteraction}
           >
-            <H6>Nutrition</H6>
+            <H6>pH</H6>
           </Tabs.Tab>
           <Tabs.Tab
             unstyled
-            value="emissions"
+            value="humidity"
             onInteraction={handleOnInteraction}
           >
-            <H6>CO2 Emissions</H6>
+            <H6>Humidity</H6>
+          </Tabs.Tab>
+          <Tabs.Tab
+            unstyled
+            value="CO2"
+            onInteraction={handleOnInteraction}
+          >
+            <H6>CO2</H6>
           </Tabs.Tab>
         </Tabs.List>
       </YStack>
@@ -186,7 +193,7 @@ const TabsAdvancedBackground = () => {
               textTransform={"capitalize"}
               size={"$6"}
             >
-              {currentTab}
+              {currentTab + " on the " + new Date().getDate()}
             </H5>
             {TAB_MAP[currentTab]}
           </Tabs.Content>
@@ -197,8 +204,9 @@ const TabsAdvancedBackground = () => {
 };
 const TAB_MAP = {
   water: <WaterChart />,
-  nutrition: <NutritionChart />,
-  emissions: <EmissionChart />,
+  CO2: <WaterChart data={[459.6, 460.4, 459.6, 458.9, 458.1, 459.4]} />,
+  pH: <WaterChart data={[8.12, 8.13, 8.11, 8.1, 8.09, 8.11]} />,
+  humidity: <WaterChart data={[27.2, 27.2, 27.2, 27.27, 27.28]} />,
 };
 const TabsRovingIndicator = ({
   active,

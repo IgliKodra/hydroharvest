@@ -1,21 +1,14 @@
 import { LineChart } from "react-native-chart-kit";
 import { Dimensions } from "react-native";
 
-const WaterChart = () => {
+const WaterChart = ({ data = [26, 26, 26, 25, 25] }: { data?: number[] }) => {
   return (
     <LineChart
       data={{
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        labels: ["12:28:40", "12:29:03", "12:29:25", "12:29:48", "12:30:11"],
         datasets: [
           {
-            data: [
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-            ],
+            data,
           },
         ],
       }}

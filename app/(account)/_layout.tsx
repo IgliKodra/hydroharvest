@@ -8,7 +8,6 @@ import { Slot, usePathname } from "expo-router";
 import { YStack, styled, XStack, H1, H4 } from "tamagui";
 import { CornerDownRight } from "@tamagui/lucide-icons";
 // Custom Components
-import { Drawer, LayoutSafeAreaView } from "@consts/components";
 // Utils
 import { ROUTER } from "@consts/defaults";
 // Styled Components

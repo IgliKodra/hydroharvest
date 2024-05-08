@@ -202,6 +202,12 @@ const ROUTER: Router = {
       message: "Welcome to our community!",
       Icon: Plus,
     },
+    {
+      title: "Sign Out",
+      path: "/sign-out",
+      message: "Goodbye!",
+      Icon: Plus,
+    },
   ],
   main: [
     {
